@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloProvider as Database } from '@apollo/react-hooks';
 import { ThemeProvider as Theming } from 'styled-components';
 
-import { Jungsoft as client } from 'clients';
+import { GraphQL as client } from 'clients';
 import theme from 'theme';
 import { App } from 'components';
 

@@ -1,1 +1,1 @@
-export { default as Jungsoft } from './jungsoft';
+export { default as GraphQL } from './graphql';
