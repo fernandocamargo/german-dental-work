@@ -1,12 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { StrictMode } from 'react';
+import { render } from 'react-dom';
 
-import App from "./App";
+import { Root } from 'components';
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  rootElement
+export default render(
+  <StrictMode>
+    <Root />
+  </StrictMode>,
+  document.getElementById('root')
 );
