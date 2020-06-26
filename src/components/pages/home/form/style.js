@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { use } from 'helpers/object';
 import { Currency, Radio } from 'components/widgets';
 
 const SPLASH_HEIGHT = 267;
@@ -8,10 +9,12 @@ const SPLASH_WIDTH = 462;
 
 export default component => styled(component)`
   border-radius: 10px;
+  display: block;
   overflow: hidden;
-  margin-top: 39.52px;
+  margin: 39.52px 26px 0 25px;
   padding: ${SPLASH_HEIGHT}px 0 0 0;
   position: relative;
+  width: calc(100% - 51px);
 
   &:before {
     background: #000 center
@@ -120,24 +123,11 @@ export default component => styled(component)`
     }
   }
 
-  ${({
-    theme: {
-      breakpoints: { desktop },
-    },
-  }) => desktop} {
-    padding: 0 0 0 ${SPLASH_WIDTH}px;
+  ${use('theme.breakpoints.tablet')} {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
 
-    &:before {
-      height: 100%;
-      width: ${SPLASH_WIDTH}px;
-    }
-  }
-
-  ${({
-    theme: {
-      breakpoints: { tablet },
-    },
-  }) => tablet} {
     fieldset > div {
       display: grid;
       grid-template-areas:
@@ -163,6 +153,15 @@ export default component => styled(component)`
       button {
         width: 366px;
       }
+    }
+  }
+
+  ${use('theme.breakpoints.desktop')} {
+    padding: 0 0 0 ${SPLASH_WIDTH}px;
+
+    &:before {
+      height: 100%;
+      width: ${SPLASH_WIDTH}px;
     }
   }
 `;
