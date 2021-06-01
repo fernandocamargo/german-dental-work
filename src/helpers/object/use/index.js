@@ -1,2 +1,3 @@
-export default path => object =>
-  path.split('.').reduce((stack, fragment) => stack[fragment], object);
+import { access } from 'helpers/object';
+
+export default path => object => path.split('.').reduce(access, object);

@@ -31,6 +31,7 @@ export default component => styled(component)`
 
   fieldset > div {
     background-color: #fff;
+    padding: 32px 0 0 0;
     width: 100%;
   }
 
